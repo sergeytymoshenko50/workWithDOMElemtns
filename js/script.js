@@ -14,6 +14,8 @@
 
 'use strict';
 
+const doc = document.body;
+
 const movieDB = {
     movies: [
         "Логан",
@@ -24,3 +26,18 @@ const movieDB = {
     ]
 };
 
+
+doc.querySelectorAll(".promo__adv *").forEach(item =>{
+    item.remove();
+});
+
+doc.querySelector(".promo__genre").innerHTML = "ДРАМА";
+doc.querySelector(".promo__bg").style.cssText = `background: url(../img/bg.jpg);
+                                                background-repeat: no-repeat;
+                                                background-size: cover;`;
+
+doc.querySelectorAll(".promo__interactive-item").forEach((item, i) => {
+    movieDB.movies.sort();
+    item.innerHTML = `${i+1}. ${movieDB.movies[i]} <div class="delete"></div>
+    `;
+});

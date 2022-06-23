@@ -14,30 +14,50 @@
 
 'use strict';
 
-const doc = document.body;
+// const doc = document.body,
+//         filmList = document.querySelector(".promo__interactive-list");
 
-const movieDB = {
-    movies: [
-        "Логан",
-        "Лига справедливости",
-        "Ла-ла лэнд",
-        "Одержимость",
-        "Скотт Пилигрим против..."
-    ]
-};
+// const movieDB = {
+//     movies: [
+//         "Логан",
+//         "Лига справедливости",
+//         "Ла-ла лэнд",
+//         "Одержимость",
+//         "Скотт Пилигрим против..."
+//     ]
+// };
+
+// doc.querySelectorAll(".promo__adv img").forEach(item =>{
+//     item.remove();
+// });
+
+// doc.querySelector(".promo__genre").innerHTML = "ДРАМА";
+// doc.querySelector(".promo__bg").style.cssText = `background: url(img/bg.jpg);
+//                                                 background-repeat: no-repeat;
+//                                                 background-size: cover;`;
 
 
-doc.querySelectorAll(".promo__adv *").forEach(item =>{
-    item.remove();
-});
+// filmList.innerHTML ="";
+// movieDB.movies.sort().forEach((item, i) => {    
+//     filmList.innerHTML += `<li class="promo__interactive-item">${i + 1} ${item}
+//                                 <div class="delete"></div>
+//                            </li>`;
+// });
 
-doc.querySelector(".promo__genre").innerHTML = "ДРАМА";
-doc.querySelector(".promo__bg").style.cssText = `background: url(../img/bg.jpg);
-                                                background-repeat: no-repeat;
-                                                background-size: cover;`;
-
-doc.querySelectorAll(".promo__interactive-item").forEach((item, i) => {
-    movieDB.movies.sort();
-    item.innerHTML = `${i+1}. ${movieDB.movies[i]} <div class="delete"></div>
-    `;
-});
+// recursion
+function factorial(n) {
+    if(n === 1){
+        return n;
+    }else if(isNaN(n)){
+        return "isNaN";
+    }else if(n <= 0){
+        return 1;
+    }else {
+        return n *= factorial(n -1);
+    }
+}
+console.log(factorial(1));
+console.log(factorial(2));
+console.log(factorial(3));
+console.log(factorial(4));
+console.log(factorial(5));
